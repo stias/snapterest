@@ -6,6 +6,7 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 configure({ adapter: new Adapter() });
 
+/*
 describe('Header', () => {
     test('renders default header text', () => {
         const component = renderer.create(
@@ -34,12 +35,15 @@ describe('Header', () => {
         expect(firstChild).toBe(headerText);
     });
 });
+ */
 
 describe('Header', () => {
     test('renders default header text', () => {
         const wrapper = shallow(
             <Header/>
         );
+
+        console.log(wrapper);
 
         expect(wrapper.find('h2')).toHaveLength(1);
         expect(wrapper.contains(DEFAULT_HEADER_TEXT)).toBe(true);

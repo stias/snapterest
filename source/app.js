@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Application from './components/Application';
 
 ReactDOM.render(
-    <Application />,
+    //<React.StrictMode>
+        <Application />,
+    //</React.StrictMode>,
     document.getElementById('react-application')
 )

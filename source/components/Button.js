@@ -8,7 +8,7 @@ const Button = ({ label, handleClick }) => (
     <button
         className="btn btn-default"
         style={buttonStyle}
-        onclick={handleClick}
+        onClick={handleClick}
         >
         {label}
     </button>

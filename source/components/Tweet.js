@@ -17,7 +17,7 @@ const imageStyle = {
 };
 
 class Tweet extends React.Component {
-    handleImageClick() {
+    handleImageClick = () => {
         const { tweet, onImageClick } = this.props;
 
         if (onImageClick) {
@@ -35,6 +35,7 @@ class Tweet extends React.Component {
                     src={tweetMediaUrl}
                     onClick={this.handleImageClick}
                     style={imageStyle}
+                    alt="img"
                 />
             </div>
         );

@@ -12,6 +12,9 @@ const listItemStyle = {
 }
 
 class TweetList extends Component {
+    getListOfTweetIds = () =>
+        Object.keys(this.props.tweets);
+
     getTweetElement = (tweetId) => {
         const { tweets, onRemoveTweetFromCollection } = this.props;
         const tweet = tweets[tweetId];
@@ -36,7 +39,7 @@ class TweetList extends Component {
     }
 
     render() {
-        const tweetElements = TweetUtils
+        const tweetElements = this
             .getListOfTweetIds()
             .map(this.getTweetElement);
 
