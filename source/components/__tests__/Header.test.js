@@ -37,7 +37,7 @@ describe('Header', () => {
 });
  */
 
-describe('Header', () => {
+describe('Header Unit test', () => {
     test('renders default header text', () => {
         const wrapper = shallow(
             <Header/>
@@ -58,5 +58,31 @@ describe('Header', () => {
 
         expect(wrapper.find('h2')).toHaveLength(1);
         expect(wrapper.contains(headerText)).toBe(true);
+    });
+});
+
+describe('Header Snapshot test', () => {
+    test('renders default header text', () => {
+        const component = renderer.create(
+            <Header/>
+        );
+
+        const tree = component.toJSON();
+
+        expect(tree)
+            .toMatchSnapshot();
+    });
+
+    test('renders provided header text', () => {
+        const headerText = 'Testing';
+
+        const component = renderer.create(
+            <Header text={headerText} />
+        );
+
+        const tree = component.toJSON();
+
+        expect(tree)
+            .toMatchSnapshot();
     });
 });
