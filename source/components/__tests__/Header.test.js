@@ -11,6 +11,9 @@ describe('Header', () => {
         const tree = component.toJSON();
         const firstChild = tree.children[0];
 
+        console.log(component);
+        console.log(tree);
+
         expect(firstChild).toBe(DEFAULT_HEADER_TEXT);
     });
 
