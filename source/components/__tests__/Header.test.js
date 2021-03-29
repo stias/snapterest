@@ -1,6 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Header, { DEFAULT_HEADER_TEXT } from "../Header";
+import { shallow, configure } from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+
+configure({ adapter: new Adapter() });
 
 describe('Header', () => {
     test('renders default header text', () => {
@@ -28,5 +32,27 @@ describe('Header', () => {
         const firstChild = tree.children[0];
 
         expect(firstChild).toBe(headerText);
+    });
+});
+
+describe('Header', () => {
+    test('renders default header text', () => {
+        const wrapper = shallow(
+            <Header/>
+        );
+
+        expect(wrapper.find('h2')).toHaveLength(1);
+        expect(wrapper.contains(DEFAULT_HEADER_TEXT)).toBe(true);
+    });
+
+    test('renders provided header text', () => {
+        const headerText = 'Testing';
+
+        const wrapper = shallow(
+            <Header text={headerText} />
+        );
+
+        expect(wrapper.find('h2')).toHaveLength(1);
+        expect(wrapper.contains(headerText)).toBe(true);
     });
 });
