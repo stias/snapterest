@@ -3,6 +3,7 @@ import Stream from './Stream';
 import Collection from './Collection';
 
 class Application extends Component {
+    /*
     state = {
         collectionTweets: {}
     }
@@ -32,14 +33,22 @@ class Application extends Component {
             collectionTweets: {}
         });
     }
+     */
 
     render() {
+        /*
         const {
             addTweetToCollection,
             removeTweetFromCollection,
             removeAllTweetsFromCollection
         } = this;
+         */
 
+        const {
+            collectionTweets
+        } = this.state;
+
+        /*
         return (
             <div className="container-fluid">
                 <div className="row">
@@ -53,6 +62,20 @@ class Application extends Component {
                             onRemoveTweetFromCollection={removeTweetFromCollection}
                             onRemoveAllTweetsFromCollection={removeAllTweetsFromCollection}
                             />
+                    </div>
+                </div>
+            </div>
+        )
+         */
+
+        return (
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-md-4 text-center">
+                        <Stream />
+                    </div>
+                    <div className="col-md-8">
+                        <Collection />
                     </div>
                 </div>
             </div>
