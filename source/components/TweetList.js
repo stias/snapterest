@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+
 import Tweet from './Tweet';
-import TweetUtils from '../utils/TweetUtils';
-import CollectionActionCreators from "../actions/CollectionActionCreators";
+import {removeTweetFromCollection} from "../actions";
 
 const listStyle = {
     padding: '0'
@@ -13,33 +14,23 @@ const listItemStyle = {
 }
 
 class TweetList extends Component {
-    removeTweetFromCollection = tweet => {
-        CollectionActionCreators.removeTweetFromCollection(tweet.id);
-    }
-
     getListOfTweetIds = () =>
         Object.keys(this.props.tweets);
 
     getTweetElement = (tweetId) => {
-        const { tweets } = this.props;
-        const onRemoveTweetFromCollection = this.removeTweetFromCollection;
-        const tweet = tweets[tweetId];
-        let tweetElement;
+        const {
+            tweets,
+            onRemoveTweetFromCollection
+        } = this.props;
 
-        if (onRemoveTweetFromCollection) {
-            tweetElement = (
+        const tweet = tweets[tweetId];
+
+        return (
+            <li style={listItemStyle} key={tweet.id}>
                 <Tweet
                     tweet={tweet}
                     onImageClick={onRemoveTweetFromCollection}
                 />
-            );
-        } else {
-            tweetElement = <Tweet tweet={tweet} />
-        }
-
-        return (
-            <li style={listItemStyle} key={tweet.id}>
-                {tweetElement}
             </li>
         );
     }
@@ -57,5 +48,15 @@ class TweetList extends Component {
     }
 }
 
+const mapStateToProps = () => ({});
 
-export default TweetList;
+const mapDispatchToProps = dispatch => ({
+    onRemoveTweetFromCollection: ({ id }) => {
+        dispatch(removeTweetFromCollection(id));
+    }
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(TweetList);

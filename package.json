@@ -33,6 +33,8 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-redux": "^7.2.3",
+    "redux": "^4.0.5",
     "snapkite-stream-client": "^1.0.2",
     "socket.io-client": "^4.0.0"
   }
