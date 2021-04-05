@@ -42,7 +42,7 @@ class CollectionControls extends Component {
 
     render() {
         const { name, isEditingName } = this.state;
-        const onRemoveAllTweetsFromCollection = this.removeAllTweetsFromCollection();
+        const onRemoveAllTweetsFromCollection = this.removeAllTweetsFromCollection;
         const { htmlMarkup } = this.props;
 
         if (isEditingName) {
