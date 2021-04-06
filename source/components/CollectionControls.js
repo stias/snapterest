@@ -41,7 +41,7 @@ class CollectionControls extends Component {
 
         if (isEditingName) {
             return (
-                <CollectionRenameForm name={name}/>
+                <CollectionRenameForm name={collectionName}/>
             );
         }
 

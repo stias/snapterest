@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 import Tweet from './Tweet';
-import {removeTweetFromCollection} from "../actions";
+import { removeTweetFromCollection } from "../actions";
 
 const listStyle = {
     padding: '0'

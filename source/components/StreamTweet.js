@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
-import ReactDOM from 'react-dom';
 import Header from './Header';
 import Tweet from './Tweet';
-import store from '../stores';
 import { addTweetToCollection } from "../actions";
 
 class StreamTweet extends Component {

@@ -6,13 +6,11 @@ import Application from './components/Application';
 import { initializeStreamOfTweets } from "./utils/WebAPIUtils";
 import store from './stores';
 
-initializeStreamOfTweets();
+initializeStreamOfTweets(store);
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <Application />
-        </Provider>
-    </React.StrictMode>,
+    <Provider store={store}>
+        <Application />
+    </Provider>,
     document.getElementById('react-application')
 )

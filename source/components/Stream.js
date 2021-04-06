@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import StreamTweet from './StreamTweet';
 import Header from './Header';
-import TweetStore from "../stores/TweetStore";
 
 class Stream extends Component {
     render() {

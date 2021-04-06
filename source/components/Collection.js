@@ -8,7 +8,9 @@ import Header from './Header';
 import CollectionUtils from "../utils/CollectionUtils";
 
 class Collection extends Component {
-    createHtmlMarkupStringOfTweetList = () => {
+    createHtmlMarkupStringOfTweetList() {
+        console.log('CreateHtmlMarkupStringOfTweetList');
+        console.log(this.props);
         const { collectionTweets } = this.props;
         const htmlString = ReactDOMServer.renderToStaticMarkup(
             <TweetList tweets={collectionTweets} />
