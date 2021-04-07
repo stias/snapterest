@@ -6,15 +6,21 @@ import CollectionControls from './CollectionControls';
 import TweetList from './TweetList';
 import Header from './Header';
 import CollectionUtils from "../utils/CollectionUtils";
+import store from "../stores";
+import { Provider } from "react-redux";
 
 class Collection extends Component {
     createHtmlMarkupStringOfTweetList() {
-        console.log('CreateHtmlMarkupStringOfTweetList');
-        console.log(this.props);
         const { collectionTweets } = this.props;
+
         const htmlString = ReactDOMServer.renderToStaticMarkup(
-            <TweetList tweets={collectionTweets} />
+            <Provider store={store}>
+                <TweetList tweets={collectionTweets} />
+            </Provider>
         );
+
+        console.log("===== renderToStaticMarkup DEBUG =====");
+        console.log(htmlString);
 
         const htmlMarkup = {
             html: htmlString

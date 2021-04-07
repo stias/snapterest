@@ -53,7 +53,7 @@ const collectionReducer = (
             return {
                 ...state,
                 collectionName: state.editingName,
-                isEditingName: false
+                isEditingName: !state.isEditingName
             };
 
         case 'set_editing_name':
