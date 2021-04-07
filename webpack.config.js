@@ -1,10 +1,20 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     entry: './source/app.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'snapterest.js'
     },
+    devServer: {
+        port: 9000,
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'build/index.html'
+        }),
+    ],
     module: {
         rules: [
             {
