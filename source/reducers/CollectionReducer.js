@@ -52,7 +52,6 @@ const collectionReducer = (
         case 'toggle_is_editing_name':
             return {
                 ...state,
-                collectionName: state.editingName,
                 isEditingName: !state.isEditingName
             };
 

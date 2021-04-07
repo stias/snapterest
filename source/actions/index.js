@@ -12,9 +12,8 @@ export const removeAllTweetsFromCollection = () => ({
     type: 'remove_all_tweets_from_collection'
 });
 
-export const setCollectionName = collectionName => ({
-    type: 'set_collection_name',
-    collectionName
+export const setCollectionName = () => ({
+    type: 'set_collection_name'
 });
 
 export const toggleIsEditingName = () => ({
